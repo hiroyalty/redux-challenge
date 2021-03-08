@@ -14,11 +14,12 @@ export const updateSearchPhrase = newPhrase =>
         }));
         // TODO something is wrong here
         dispatch(
-          searchActions.updateSearchPhraseSuccess({ matchingContacts: [] }),
+          searchActions.updateSearchPhraseSuccess({ matchingContacts: matchingContacts }),
         );
       })
-      .catch(() => {
+      .catch((error) => {
         // TODO something is missing here
+        dispatch(searchActions.updateSearchPhraseFailure())
       });
   };
 
@@ -28,7 +29,7 @@ export const selectMatchingContact = selectedMatchingContact =>
     // TODO something is missing here
     const getContactDetails = ({ id }) => {
       return httpApi
-          .getContact({ contactId: selectedMatchingContact.id })
+          .getContact({ contactId: id })
           .then(({ data }) => ({
             id: data.id,
             name: data.name,
@@ -53,7 +54,7 @@ export const selectMatchingContact = selectedMatchingContact =>
         });
         // TODO something is wrong here
         dispatch(
-          contactDetailsActions.fetchContactDetailsFailure(),
+          contactDetailsActions.fetchContactDetailsSuccess(),
         );
       })
       .catch(() => {

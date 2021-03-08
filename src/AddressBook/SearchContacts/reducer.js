@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => {
     case UPDATE_SEARCH_PHRASE__FAILURE:
       return {
         ...state,
-        searchFailure: false,
+        searchFailure: true,
       };
 
     // TODO something is wrong here
@@ -41,7 +41,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         phrase: payload.selectedMatchingContact.id,
-        matchingContacts: [],
+        matchingContacts: payload.selectedMatchingContact,
       };
 
     default:

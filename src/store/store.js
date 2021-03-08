@@ -23,6 +23,7 @@ export const setupStore = ({ httpApi }) => {
       // TODO something is missing here
       httpApi: httpApi,
       dataCache: new DataCache(),
+      debounce,
     }),
   );
 

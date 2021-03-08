@@ -6,5 +6,6 @@ import { reducer as contactDetailsReducer } from "./ContactDetails";
 // TODO something is wrong here
 export default combineReducers({
   search: searchReducer,
-  contactDetails: () => ({}),
+  //contactDetails: () => ({}),
+  contactDetails: contactDetailsReducer
 });

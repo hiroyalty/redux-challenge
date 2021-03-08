@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 
 import "./MatchingContacts.css";
+import { render } from "enzyme";
 
 const MatchingContacts = (
   {
@@ -13,7 +14,7 @@ const MatchingContacts = (
   },
 ) => {
   // TODO something is missing here
-
+  
   return (
     <ul
       {...downshiftGetMenuProps()}

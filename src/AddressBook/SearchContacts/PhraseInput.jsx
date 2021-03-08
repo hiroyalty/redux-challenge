@@ -29,8 +29,8 @@ class PhraseInput extends React.Component {
           className: "PhraseInput",
           ref: inputRef => this.inputRef = inputRef,
           placeholder: "To show contact's details, type its name…",
-          value: phrase,
-          onChange: event => onPhraseChange("phrase"),
+          value: this.phrase,
+          onChange: event => onPhraseChange(this.inputRef.value),
         })}
       />
     );
